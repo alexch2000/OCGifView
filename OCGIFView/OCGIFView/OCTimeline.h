@@ -15,4 +15,6 @@
 
 - (NSInteger)frameIndexAtTimeStamp:(NSTimeInterval)timeStamp;
 
+@property (nonatomic, readonly) NSTimeInterval duration;
+
 @end

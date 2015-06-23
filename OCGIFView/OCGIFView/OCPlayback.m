@@ -12,6 +12,9 @@
 @interface OCPlayback ()
 
 @property (nonatomic, strong) CADisplayLink* displayLink;
+@property (nonatomic) NSTimeInterval currentTime;
+
+@property (nonatomic) NSInteger currentRepeatCount;
 
 @end
 
@@ -30,18 +33,25 @@
 
 - (void)displayLinkFire:(CADisplayLink*)displayLink
 {
-    
+    self.currentTime = _currentTime + displayLink.duration;
 }
 
 - (void)start
 {
-    [_displayLink invalidate];
-    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkFire:)];
+    if (_displayLink)
+    {
+        _displayLink.paused = NO;
+    }
+    else
+    {
+        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkFire:)];
+        [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    }
 }
 
 - (void)pause
 {
-    [_displayLink invalidate];
+    _displayLink.paused = YES;
 }
 
 - (void)stop
@@ -52,7 +62,43 @@
 
 - (void)seekToTime:(NSTimeInterval)time
 {
-    _currentTime = MAX(MIN(0, time), _duration);
+    self.currentTime = MIN(MAX(0, time), _duration);
 }
+
+- (void)setCurrentTime:(NSTimeInterval)currentTime
+{
+    if (_currentTime != currentTime)
+    {
+        if (currentTime >= _duration)
+        {
+            NSInteger numberOfLoops = floor(currentTime / _duration);
+            _currentRepeatCount += numberOfLoops;
+            if (_currentRepeatCount >= _repeatCount)
+            {
+                [self stop];
+                if (_didFinishBlock)
+                    _didFinishBlock();
+            }
+            else
+            {
+                _currentTime = currentTime - _duration * numberOfLoops;
+            }
+        }
+        else
+        {
+            _currentTime = currentTime;
+        }
+        
+        if (_didChangeTimeBlock)
+            _didChangeTimeBlock(_currentTime);
+    }
+}
+
+- (void)notifyBlockWithCurrentTime:(NSTimeInterval)currentTime
+{
+    if (_didChangeTimeBlock)
+        _didChangeTimeBlock(currentTime);
+}
+
 
 @end

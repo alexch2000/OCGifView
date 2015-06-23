@@ -58,5 +58,10 @@
     
 }
 
+- (NSTimeInterval)duration
+{
+    return [[_timeStampsArray lastObject] doubleValue];
+}
+
 
 @end
