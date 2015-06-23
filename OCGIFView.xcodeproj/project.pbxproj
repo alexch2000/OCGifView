@@ -19,6 +19,8 @@
 		1745A8331B383A1F00D9BA6B /* OCPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 1745A8321B383A1F00D9BA6B /* OCPlayback.m */; };
 		1745A8351B383DEB00D9BA6B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1745A8341B383DEB00D9BA6B /* QuartzCore.framework */; };
 		1745A8371B383E7800D9BA6B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1745A8361B383E7800D9BA6B /* ImageIO.framework */; };
+		1745A83A1B3844B400D9BA6B /* OCTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 1745A8391B3844B400D9BA6B /* OCTimeline.m */; };
+		17AC65841B39432D006D5945 /* loader2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 17AC65831B39432D006D5945 /* loader2.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		1745A8321B383A1F00D9BA6B /* OCPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPlayback.m; sourceTree = "<group>"; };
 		1745A8341B383DEB00D9BA6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1745A8361B383E7800D9BA6B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		1745A8381B3844B400D9BA6B /* OCTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTimeline.h; sourceTree = "<group>"; };
+		1745A8391B3844B400D9BA6B /* OCTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTimeline.m; sourceTree = "<group>"; };
+		17AC65831B39432D006D5945 /* loader2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader2.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +103,7 @@
 		1745A8031B38372300D9BA6B /* OCGIFView */ = {
 			isa = PBXGroup;
 			children = (
+				17AC65831B39432D006D5945 /* loader2.gif */,
 				1745A82A1B38374500D9BA6B /* OCGIFView */,
 				1745A8081B38372300D9BA6B /* AppDelegate.h */,
 				1745A8091B38372300D9BA6B /* AppDelegate.m */,
@@ -146,6 +152,8 @@
 				1745A82F1B3837AE00D9BA6B /* OCGIFLayer.m */,
 				1745A8311B383A1F00D9BA6B /* OCPlayback.h */,
 				1745A8321B383A1F00D9BA6B /* OCPlayback.m */,
+				1745A8381B3844B400D9BA6B /* OCTimeline.h */,
+				1745A8391B3844B400D9BA6B /* OCTimeline.m */,
 			);
 			path = OCGIFView;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17AC65841B39432D006D5945 /* loader2.gif in Resources */,
 				1745A8101B38372300D9BA6B /* Main.storyboard in Resources */,
 				1745A8151B38372300D9BA6B /* LaunchScreen.xib in Resources */,
 				1745A8121B38372300D9BA6B /* Images.xcassets in Resources */,
@@ -255,6 +264,7 @@
 				1745A82D1B38376200D9BA6B /* OCGIFView.m in Sources */,
 				1745A80A1B38372300D9BA6B /* AppDelegate.m in Sources */,
 				1745A8301B3837AE00D9BA6B /* OCGIFLayer.m in Sources */,
+				1745A83A1B3844B400D9BA6B /* OCTimeline.m in Sources */,
 				1745A8071B38372300D9BA6B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +462,7 @@
 				1745A8261B38372300D9BA6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1745A8271B38372300D9BA6B /* Build configuration list for PBXNativeTarget "OCGIFViewTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +471,7 @@
 				1745A8291B38372300D9BA6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

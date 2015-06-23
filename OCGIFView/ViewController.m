@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.gifView.GIFURL = [NSURL fileURLWithPath:@"/Users/ochopyk/Downloads/_thumb_385707.png"];
+    self.gifView.GIFURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"loader2" ofType:@"gif"]];
     [self.gifView play];
 }
 

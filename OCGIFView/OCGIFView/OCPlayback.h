@@ -23,4 +23,8 @@
 
 - (void)seekToTime:(NSTimeInterval)time;
 
+@property (nonatomic, strong) void(^didChangeTimeBlock)(NSTimeInterval currentTime);
+@property (nonatomic, strong) void(^didFinishBlock)();
+@property (nonatomic, strong) void(^didStartBlock)();
+
 @end
